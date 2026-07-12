@@ -1,0 +1,152 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Open Sans",sans-serif;
+}
+
+
+body{
+    background:#f8f9fc;
+    color:#222;
+}
+
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+/* Common Button */
+
+.common-btn{
+    background:#5b3df5;
+    color:white;
+    border:none;
+    padding:14px 28px;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.common-btn:hover{
+    background:#4027d7;
+}
+
+.outline-btn{
+    background:white;
+    color:#5b3df5;
+    border:2px solid #5b3df5;
+    padding:14px 28px;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.outline-btn:hover{
+    background:#5b3df5;
+    color:white;
+}
+
+/* Navbar */
+
+header{
+    width:100%;
+    background:#0d1117;
+    position:sticky;
+    top:0;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    color:white;
+    font-size:28px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#5b3df5;
+}
+
+nav ul{
+    display:flex;
+    gap:35px;
+}
+
+nav ul li a{
+    color:white;
+    font-size:16px;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#5b3df5;
+}
+
+.hero-parent-root{
+    background-image:
+    linear-gradient(rgba(13,17,23,.80),
+    rgba(13,17,23,.80)),
+    url("./banner.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    min-height:90vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-overlay{
+    width:100%;
+}
+
+.hero-parent{
+    text-align:center;
+    color:white;
+}
+
+.hero-parent h1{
+    font-size:68px;
+    font-weight:800;
+    margin-bottom:25px;
+}
+
+.hero-parent h1 em{
+    color:#8f7bff;
+    font-style:italic;
+}
+
+.hero-parent p{
+    width:70%;
+    margin:auto;
+    font-size:18px;
+    line-height:1.8;
+    color:#dddddd;
+    margin-bottom:35px;
+}
+
+.hero-parent .common-btn{
+    font-size:18px;
+    padding:16px 35px;
+}
+
