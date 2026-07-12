@@ -5,12 +5,19 @@
     font-family:"Open Sans",sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
 
 body{
     background:#f8f9fc;
     color:#222;
 }
 
+img{
+    max-width:100%;
+    display:block;
+}
 
 a{
     text-decoration:none;
@@ -36,11 +43,11 @@ ul{
     font-size:16px;
     font-weight:600;
     cursor:pointer;
+    transition:.3s;
 }
 
 .common-btn:hover{
     background:#4027d7;
-}
 }
 
 .outline-btn{
@@ -52,6 +59,7 @@ ul{
     font-size:16px;
     font-weight:600;
     cursor:pointer;
+    transition:.3s;
 }
 
 .outline-btn:hover{
@@ -66,6 +74,7 @@ header{
     background:#0d1117;
     position:sticky;
     top:0;
+    z-index:999;
 }
 
 nav{
@@ -73,6 +82,17 @@ nav{
     justify-content:space-between;
     align-items:center;
     padding:18px 0;
+}
+
+.logo-parent{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-parent i{
+    color:#5b3df5;
+    font-size:26px;
 }
 
 .logo{
@@ -93,11 +113,14 @@ nav ul{
 nav ul li a{
     color:white;
     font-size:16px;
+    transition:.3s;
 }
 
 nav ul li a:hover{
     color:#5b3df5;
 }
+
+/* Hero Section */
 
 .hero-parent-root{
     background-image:
@@ -175,15 +198,18 @@ nav ul li a:hover{
     border-radius:12px;
     overflow:hidden;
     box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
 }
 
 .speaker-card:hover{
+    transform:translateY(-8px);
     box-shadow:0 15px 35px rgba(0,0,0,.15);
 }
 
 .speaker-card img{
     width:100%;
     height:280px;
+    object-fit:cover;
 }
 
 .speaker-content{
@@ -213,6 +239,17 @@ nav ul li a:hover{
     font-size:16px;
 }
 
+/* Hover Effect */
+
+.speaker-card:hover .speaker-category{
+    background:#111827;
+}
+
+.speaker-card:hover h3{
+    color:#5b3df5;
+}
+
+/* Pricing Section */
 
 .pricing-parent{
     margin:100px auto;
@@ -244,10 +281,15 @@ nav ul li a:hover{
     border-radius:15px;
     padding:35px 30px;
     box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.3s;
     display:flex;
     flex-direction:column;
 }
 
+.pricing-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
 
 .plan-name{
     display:inline-block;
@@ -290,6 +332,13 @@ nav ul li a:hover{
     line-height:1.7;
 }
 
+.pricing-list li::before{
+    content:"✔";
+    color:#5b3df5;
+    font-weight:bold;
+    margin-right:10px;
+}
+
 .pricing-card button{
     width:100%;
 }
@@ -320,6 +369,75 @@ nav ul li a:hover{
 .featured-card .pricing-list li::before{
     color:#ffffff;
 }
+
+.featured-card:hover{
+    transform:scale(1.08);
+}
+
+
+/* AI Challenge Section */
+
+.hackathon-parent{
+    margin:100px auto;
+    text-align:center;
+}
+
+.hackathon-parent h2{
+    font-size:40px;
+    margin-bottom:15px;
+    color:#111827;
+}
+
+.hackathon-subtitle{
+    width:70%;
+    margin:auto;
+    color:#6b7280;
+    line-height:1.8;
+    margin-bottom:50px;
+}
+
+.hackathon-card-parent{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.hackathon-card{
+    background:#ffffff;
+    padding:40px 25px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.hackathon-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.hackathon-card i{
+    font-size:50px;
+    color:#5b3df5;
+    margin-bottom:25px;
+}
+
+.hackathon-card h3{
+    font-size:24px;
+    margin-bottom:15px;
+    color:#111827;
+}
+
+.hackathon-card p{
+    color:#6b7280;
+    line-height:1.8;
+}
+
+.hackathon-card:hover i{
+    transform:rotate(10deg) scale(1.1);
+    transition:.3s;
+}
+
+/* Footer */
 
 footer{
     background:#0d1117;
@@ -353,6 +471,12 @@ footer{
     align-items:center;
     color:white;
     font-size:18px;
+    transition:.3s;
+}
+
+.footer-icon-parent a:hover{
+    background:#5b3df5;
+    transform:translateY(-5px);
 }
 
 footer hr{
@@ -366,4 +490,125 @@ footer hr{
     text-align:center;
     color:#9ca3af;
     font-size:15px;
+}
+
+
+/* Responsive Design*/
+
+@media screen and (max-width:992px){
+
+    .container{
+        width:90%;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:18px;
+    }
+
+    .hero-parent h1{
+        font-size:50px;
+    }
+
+    .hero-parent p{
+        width:90%;
+    }
+
+    .speaker-card-container{
+        grid-template-columns:1fr;
+    }
+
+    .pricing-card-container{
+        flex-direction:column;
+    }
+
+    .featured-card{
+        transform:scale(1);
+    }
+
+    .featured-card:hover{
+        transform:translateY(-8px);
+    }
+
+    .hackathon-card-parent{
+        grid-template-columns:1fr;
+    }
+
+    .footer-top{
+        flex-direction:column;
+        gap:25px;
+        text-align:center;
+    }
+
+}
+
+
+@media screen and (max-width:576px){
+
+    .container{
+        width:92%;
+    }
+
+    nav ul{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav .common-btn{
+        width:100%;
+    }
+
+    .hero-parent-root{
+        min-height:80vh;
+    }
+
+    .hero-parent h1{
+        font-size:38px;
+        line-height:1.4;
+    }
+
+    .hero-parent p{
+        width:100%;
+        font-size:16px;
+    }
+
+    .speaker-parent h2,
+    .pricing-parent h2,
+    .hackathon-parent h2{
+        font-size:32px;
+    }
+
+    .speaker-card img{
+        height:220px;
+    }
+
+    .pricing-card{
+        padding:30px 20px;
+    }
+
+    .pricing-card h3{
+        font-size:38px;
+    }
+
+    .hackathon-subtitle{
+        width:100%;
+    }
+
+    .footer-icon-parent{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .footer-icon-parent a{
+        width:42px;
+        height:42px;
+        font-size:16px;
+    }
+
 }
